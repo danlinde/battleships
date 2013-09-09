@@ -1,4 +1,4 @@
-require_relative './board'
+require_relative 'board'
 
 class Player
 
@@ -16,6 +16,8 @@ class Player
 				  		['','','','','','','','','',''],
 				  		['','','','','','','','','',''],
 				  		['','','','','','','','','','']]
+		
+		@board = Board.new(self)
 	end
 
 	def populate_board
@@ -23,12 +25,11 @@ class Player
 	end
 
 	def has_ships_still_floating?
-		rows.flatten.include?('s')
+		@board.has_ships?
 	end
 
 	def shoot(at_coordinates, opponent_board)
-		board.register_shot(at_coordinates)
-		puts 'BANG!'
+		opponent_board.register_shot(at_coordinates)		
 	end
 
 

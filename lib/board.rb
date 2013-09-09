@@ -1,4 +1,7 @@
 class Board
+
+  attr_reader :rows
+  
   def initialize player
    	@player = player
   end

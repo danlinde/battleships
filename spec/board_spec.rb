@@ -15,18 +15,19 @@ describe Board do
 	end 
 
 	it 'returns an array containing 10 arrays' do 
-    # player = double :player
-    board = Board.new player
     expect(board.rows.length).to eq 10 
 	end
 
 	it 'returns an array containing 10 arrays with 10 elements' do 
-    # player = double :player
-    board = Board.new player
     expect(board.rows[0].length).to eq 10 
 	end
 
-	it 'returns an array containing 10 arrays with 10 elements '
+	it 'returns opponents view in the form of an array containing 10 arrays with 10 elements'  
+	# 	expect(board.opponent_view.length).to eq 10
+	# end
+    
 
 	it 'can convert arrays to hash' 
+  
+  it 'can have ships' 
 end

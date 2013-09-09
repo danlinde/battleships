@@ -1,3 +1,5 @@
+require 'player'
+
 class Board
 
 	attr_reader :player_board
@@ -16,13 +18,25 @@ class Board
     @shot_coordinates = at_coordinates.chars
    
     @player_board[@shot_coordinates[0]][@shot_coordinates[1].to_i-1] == 's' ? @result = "hit" : @result = "water" 
-    @player_board[@shot_coordinates[0]][@shot_coordinates[1].to_i-1] = 'x'
+    @result == "hit" ? @player_board[@shot_coordinates[0]][@shot_coordinates[1].to_i-1] = 'x' : @player_board[@shot_coordinates[0]][@shot_coordinates[1].to_i-1] = 'o' 
 
     @result
 	end
 
 	def rows
     @player_board.values
+  end
+
+  def opponent_view
+  #   @opponent_board = {}
+  #   i = 0
+  #   @players_b = @player_board.values
+  #   @player_b.each{|x| 10.times {x[i] = '' if x[i] == 's'; i += 1}} 
+   
+   
+  #   @player_board[key][value] == 's' 
+  #   top_column.each {|key| @player_board[key] = @player_board.values[i]; i += 1 }
+  #   @player_board 
   end
 
   private

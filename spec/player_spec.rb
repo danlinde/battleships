@@ -16,9 +16,11 @@ describe Player do
 	end
 
 
-	xit 'should know if ships are still floating' do
-		board = double(:board, {:rows => ['s']})
-		expect(player.has_ships_still_floating?).to be_true
+	it 'should know if ships are still floating' do
+		board = double(:board)
+		expect(player.board).to receive(:has_ships?)
+		
+		player.has_ships_still_floating?
 	end
 
     it 'registers a shot' do

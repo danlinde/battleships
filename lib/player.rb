@@ -2,11 +2,11 @@ require_relative 'board'
 
 class Player
 
-	attr_reader :name, :board_setup
+	attr_reader :name, :board_setup, :board
 
 	def initialize (name)
 		@name = name
-		@board_setup =  [['','','','','','','','','',''],
+		@board_setup = [['','','','','','','','','',''],
 				  		['','','','','','','','','',''],
 				  		['','','','','','','','','',''],
 				  		['','','','','','','','','',''],
@@ -35,11 +35,3 @@ class Player
 
 
 end
-
-
-
-# player = Player.new('ricardo')
-# player.populate_board
-
-# p player.board
-# p player.has_ships_still_floating?

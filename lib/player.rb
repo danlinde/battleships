@@ -25,7 +25,8 @@ class Player
 	end
 
 	def shoot(at_coordinates, opponent_board)
-		
+		board.register_shot(at_coordinates)
+		puts 'BANG!'
 	end
 
 
@@ -34,8 +35,8 @@ end
 
 
 
-player = Player.new('ricardo')
-player.populate_board
+# player = Player.new('ricardo')
+# player.populate_board
 
-p player.board
-p player.has_ships_still_floating?
+# p player.board
+# p player.has_ships_still_floating?

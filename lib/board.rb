@@ -1,6 +1,6 @@
 class Board
 
-  attr_reader :rows
+	attr_reader :player_board
 
   def initialize player
    	@player = player

@@ -6,7 +6,7 @@ class Board
 
   def initialize player
    	@player = player
-   	@player_board = rows_hash(@player.board)
+   	@player_board = rows_hash(@player.populate_board)
   end
 
   def owner

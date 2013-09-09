@@ -1,6 +1,6 @@
 class Board
 
-	attr_reader :player_board
+  attr_reader :rows
 
   def initialize player
    	@player = player
@@ -10,6 +10,7 @@ class Board
   def owner
     @player.name
   end
+
 
   def register_shot at_coordinates
     @shot_coordinates = at_coordinates.chars

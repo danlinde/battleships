@@ -10,9 +10,20 @@ describe Player do
 		expect(player.name).to eq 'ricardo'
 	end
 
+	it 'populate board with ships' do
+		player.populate_board
+		expect(player.board.flatten).to include 's'
+	end
+
+
 	it 'should know if ships are still floating' do
+		player.populate_board
 		expect(player.has_ships_still_floating?).to be_true
 	end
+
+
+
+
 
 	it ' should receive coordinates' do
 		input = double(:input)
@@ -27,7 +38,6 @@ describe Player do
 
 		player.shoot(nil, board.opponent_board)
 	end
-
 
 
 	# it 'should be able to shoot' do

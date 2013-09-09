@@ -2,7 +2,7 @@ require_relative '../lib/board'
 
 describe Board do 
 
-	let(:player) {double :player, name: 'Ting', board: [['','','','','','','','','',''], ['s','','','','','','','','',''],['','','','','','','','','',''],['','','','','','','','','',''],['','','','','','','','','',''],['','','','','','','','','',''], ['s','','','','','','','','',''],['','','','','','','','','',''],['','','','','','','','','',''],['','','','','','','','','','']]}
+	let(:player) {double :player, name: 'Ting', populate_board: [['','','','','','','','','',''], ['s','','','','','','','','',''],['','','','','','','','','',''],['','','','','','','','','',''],['','','','','','','','','',''],['','','','','','','','','',''], ['s','','','','','','','','',''],['','','','','','','','','',''],['','','','','','','','','',''],['','','','','','','','','','']]}
   let(:board) {Board.new player}
 
   it 'has an owner' do 
@@ -22,12 +22,11 @@ describe Board do
     expect(board.rows[0].length).to eq 10 
 	end
 
-	it 'returns opponents view in the form of an array containing 10 arrays with 10 elements'  
-	# 	expect(board.opponent_view.length).to eq 10
-	# end
-    
-
-	it 'can convert arrays to hash' 
+	it 'returns opponents view in the form of an array containing 10 arrays with 10 elements' do 
+		expect(board.opponent_view.length).to eq 10
+	end
   
-  it 'can have ships' 
+  it 'can have ships' do 
+  	expect(board.has_ships?).to be_true
+  end
 end

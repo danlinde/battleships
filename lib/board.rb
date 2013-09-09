@@ -6,7 +6,7 @@ class Board
 
   def initialize player
    	@player = player
-   	@player_board = rows_hash(@player.board)
+   	@player_board = rows_hash(@player.populate_board)
   end
 
   def owner
@@ -28,15 +28,20 @@ class Board
   end
 
   def opponent_view
-  #   @opponent_board = {}
-  #   i = 0
-  #   @players_b = @player_board.values
-  #   @player_b.each{|x| 10.times {x[i] = '' if x[i] == 's'; i += 1}} 
-   
-   
-  #   @player_board[key][value] == 's' 
-  #   top_column.each {|key| @player_board[key] = @player_board.values[i]; i += 1 }
-  #   @player_board 
+    @opponent_board = @player_board.values.map do |a|
+    a.map do |elem|
+        element = ''
+        if elem != 's'
+          element = elem
+        end
+        element
+      end
+    end
+    @opponent_board
+  end
+
+  def has_ships?
+    @player_board.values.flatten.include?('s')
   end
 
   private
@@ -55,3 +60,10 @@ class Board
   end
 
 end
+
+# player = Player.new ('Dan')
+# board = Board.new(player)
+
+
+
+

@@ -1,4 +1,4 @@
-require_relative 'board'
+require 'board'
 
 class Player
 
@@ -35,3 +35,5 @@ class Player
 
 
 end
+
+

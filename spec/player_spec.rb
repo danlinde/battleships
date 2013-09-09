@@ -1,7 +1,5 @@
 require_relative '../lib/player'
 
-
-
 describe Player do
 
 	let(:player) {Player.new('ricardo')}
@@ -23,13 +21,10 @@ describe Player do
 		player.has_ships_still_floating?
 	end
 
-    it 'registers a shot' do
-    	opponent_board = double :board
-    	expect(opponent_board).to receive(:register_shot).with('B4')
-    	player.shoot('B4', opponent_board)
-    end
-
-
-
+  it 'registers a shot' do
+  	opponent_board = double :board
+  	expect(opponent_board).to receive(:register_shot).with('B4')
+  	player.shoot('B4', opponent_board)
+  end
 	
 end

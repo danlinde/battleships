@@ -22,6 +22,7 @@ class Player
 
 	def populate_board
 		(10).times {@board_setup[rand(9)][rand(9)] = 's'}
+    @board_setup
 	end
 
 	def has_ships_still_floating?

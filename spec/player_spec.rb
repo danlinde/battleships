@@ -9,7 +9,6 @@ describe Player do
 	end
 
 	it 'populate board with ships' do
-		player.populate_board
 		expect(player.board_setup.flatten).to include 's'
 	end
 

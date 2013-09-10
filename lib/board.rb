@@ -51,8 +51,6 @@ class Board
   end
 
   def rows_hash player_board
-    # rows = player_board
-    # index = top_column
     @player_board = {}
     i = 0
     top_column.each {|key| @player_board[key] = player_board[i]; i += 1 }
@@ -61,8 +59,6 @@ class Board
 
 end
 
-# player = Player.new ('Dan')
-# board = Board.new(player)
 
 
 
